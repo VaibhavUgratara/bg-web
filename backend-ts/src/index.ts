@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import contactRoute from './routes/contact';
 import registerRoute from './routes/register';
+import loginRoute from './routes/login';
 
 dotenv.config(); // this lines loads .env values into process.env
 
@@ -17,6 +18,7 @@ app.use(express.json());
 // Routes
 app.use('/contact', contactRoute);
 app.use('/register', registerRoute);
+app.use('/login', loginRoute);
 
 // MongoDB connection
 mongoose
