@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import contactRoute from './routes/contact';
+import registerRoute from './routes/register';
 
 dotenv.config(); // this lines loads .env values into process.env
 
@@ -15,6 +16,7 @@ app.use(express.json());
 
 // Routes
 app.use('/contact', contactRoute);
+app.use('/register', registerRoute);
 
 // MongoDB connection
 mongoose
