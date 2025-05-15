@@ -35,3 +35,21 @@ docker run -d \
   mongo-express
 
 ```
+
+
+### 3. Access Mongo Express
+Open your browser and go to [http://localhost:8081](http://localhost:8081) to access Mongo Express.
+
+### 4. Stop and Remove Containers
+To stop and remove the containers, run:
+
+```bash
+docker stop mongodb mongo-express
+docker rm mongodb mongo-express
+```
+### 5. To run the server
+```bash
+npm i
+cd src/
+npx ts-node index.ts
+```
