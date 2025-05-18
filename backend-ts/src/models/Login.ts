@@ -1,8 +1,8 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const onlineUsersSchema = new mongoose.Schema({
-    email: String,
+  name: String,
 });
 
-const OnlineUser = mongoose.model('OnlineUsers', onlineUsersSchema);
+const OnlineUser = mongoose.model("OnlineUsers", onlineUsersSchema);
 export default OnlineUser;
