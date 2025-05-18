@@ -1,4 +1,4 @@
-import { users } from "../data";
+import { users } from "../users_data";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

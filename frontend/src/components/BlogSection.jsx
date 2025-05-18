@@ -1,5 +1,5 @@
 import React from "react";
-import { blogPosts, users } from "../data";
+import { blogPosts, users } from "../users_data";
 
 const BlogSection = () => {
   return (
