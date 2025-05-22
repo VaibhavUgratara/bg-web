@@ -5,8 +5,9 @@ import mongoose from 'mongoose';
 import contactRoute from './routes/contact';
 import registerRoute from './routes/register';
 import loginRoute from './routes/login';
+import { Request, Response } from 'express';
 
-dotenv.config(); // this lines loads .env values into process.env
+dotenv.config(); // Loads .env values into process.env
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -19,6 +20,10 @@ app.use(express.json());
 app.use('/contact', contactRoute);
 app.use('/register', registerRoute);
 app.use('/login', loginRoute);
+
+app.get('/', (req: Request, res: Response) => {
+    res.send('Welcome to the API');
+}); // ✅ Fixed
 
 // MongoDB connection
 mongoose
