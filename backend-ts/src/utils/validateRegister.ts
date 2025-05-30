@@ -1,8 +1,8 @@
 export function validateRegisterInput(
+  username: string,
   name: string,
   email: string,
   password: string,
-  username: string,
 ) {
   if (!name || typeof name !== "string" || name.length < 3) {
     return "Name must be atleast 3 characters long";
