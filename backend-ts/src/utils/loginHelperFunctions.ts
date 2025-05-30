@@ -1,4 +1,3 @@
-import mongoose from "mongoose";
 import User from "../models/Register";
 
 export async function checkCredential(email: string, password: string) {

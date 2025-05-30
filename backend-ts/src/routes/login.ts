@@ -4,7 +4,7 @@ import User from "../models/Register";
 import { checkCredential } from "../utils/loginHelperFunctions";
 
 const loginRoute = express.Router();
-loginRoute.post("/", async (req, res) => {
+loginRoute.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
     const error = await checkCredential(email, password);
