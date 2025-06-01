@@ -1,9 +1,10 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import contactRoute from "./routes/contact";
-import registerRoute from "./routes/register";
-import loginRoute from "./routes/login";
+import registerRoute from "./routes/register.route";
+import loginRoute from "./routes/login.route";
+import logoutRoute from "./routes/logout.route";
+import cookieParser from "cookie-parser";
 import dbConnect from "./utils/connection";
 
 dotenv.config();
@@ -13,11 +14,12 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use(cookieParser());
 
 // Routes
-app.use("/api", contactRoute);
-app.use("/api", registerRoute);
-app.use("/api", loginRoute);
+app.use("/api/register", registerRoute);
+app.use("/api/login", loginRoute);
+app.use("api/logout", logoutRoute);
 
 app.get("/", (req: express.Request, res: express.Response) => {
   res.send("Welcome to the API");
