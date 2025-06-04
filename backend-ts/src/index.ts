@@ -20,6 +20,7 @@ app.use(cookieParser());
 app.use("/api/register", registerRoute);
 app.use("/api/login", loginRoute);
 app.use("api/logout", logoutRoute);
+app.use("api/posts", postsRoute);
 
 app.get("/", (req: express.Request, res: express.Response) => {
   res.send("Welcome to the API");

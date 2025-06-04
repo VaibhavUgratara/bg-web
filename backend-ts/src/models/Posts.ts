@@ -8,8 +8,34 @@ const postSchema = new mongoose.Schema({
     minLength: [10, "Title should be atleast 10 characters long"],
     trim: true,
   },
-  likes: {
-    type: Number,
+  content: {
+    type: true,
+    trim: true,
+  },
+  authorId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
+  likes: { type: Number, default: 0 },
+  views: { type: Number, default: 0 },
+  allowCommments: { type: Boolean, defalt: true },
+  category: {
+    type: String,
+    trim: true,
+  },
+  status: {
+    type: String,
+    enum: ["draft", "publishded", "archived"],
+    default: "draft",
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+  updatedAt: {
+    type: Date,
+    default: Date.now,
   },
 });
 
