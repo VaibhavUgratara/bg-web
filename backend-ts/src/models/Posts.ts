@@ -9,13 +9,12 @@ const postSchema = new mongoose.Schema({
     trim: true,
   },
   content: {
-    type: true,
+    type: String,
     trim: true,
   },
   authorId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
-    required: true,
   },
   likes: { type: Number, default: 0 },
   views: { type: Number, default: 0 },
@@ -23,6 +22,7 @@ const postSchema = new mongoose.Schema({
   category: {
     type: String,
     trim: true,
+    default: "any",
   },
   status: {
     type: String,
