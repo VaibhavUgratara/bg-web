@@ -6,6 +6,8 @@ import loginRoute from "./routes/login.route";
 import logoutRoute from "./routes/logout.route";
 import cookieParser from "cookie-parser";
 import dbConnect from "./utils/connection";
+import postsRoute from "./routes/post.route";
+import userRoute from "./routes/users.route";
 
 dotenv.config();
 const app = express();
@@ -19,8 +21,9 @@ app.use(cookieParser());
 // Routes
 app.use("/api/register", registerRoute);
 app.use("/api/login", loginRoute);
-app.use("api/logout", logoutRoute);
-app.use("api/posts", postsRoute);
+app.use("/api/logout", logoutRoute);
+app.use("/api/posts", postsRoute);
+app.use("/api/users", userRoute);
 
 app.get("/", (req: express.Request, res: express.Response) => {
   res.send("Welcome to the API");

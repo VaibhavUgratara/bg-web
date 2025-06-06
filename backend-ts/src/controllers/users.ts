@@ -28,7 +28,7 @@ async function handleRegister(req: Request, res: Response) {
 
     res.status(201).json({ message: "User Registered Successfully" });
   } catch (err) {
-    console.error("Error! Registering", err);
+    console.error("Error! Hello Registering", err);
     res.status(500).json({ message: "Internal Server Error" });
   }
 }
@@ -84,4 +84,19 @@ async function handleLogout(req: Request, res: Response) {
   User.deleteOne({ sessionId });
   res.status(200).json({ message: "Logged out Successfully" });
 }
-export { handleRegister, handleLogin, handleLogout };
+
+async function getAllUsers(req: Request, res: Response) {
+  const allUsers = await User.find({});
+  res.status(200).json(allUsers);
+}
+
+async function getUserById(req: Request, res: Response) {
+  const { id } = req.params;
+  const user = await User.findById(id);
+  if (!user) {
+    res.status(400).json({ message: `No user found with ${id} id` });
+    return;
+  }
+  res.status(200).json(user);
+}
+export { handleRegister, getAllUsers, handleLogin, handleLogout, getUserById };
