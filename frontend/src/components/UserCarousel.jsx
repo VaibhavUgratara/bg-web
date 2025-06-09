@@ -27,7 +27,7 @@ const UserCarousel = () => {
           <div key={user.id} className="px-3">
             <div className="bg-white rounded-lg shadow p-4 text-center">
             <img
-  src={user.avatar || "https://via.placeholder.com/150"}
+  src={user.avatar || "https://unsplash.it/150/150?random"}
   alt={user.name}
   className="w-24 h-24 mx-auto rounded-full object-cover"
 />

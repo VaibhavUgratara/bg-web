@@ -1,5 +1,6 @@
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
+import { Link } from "react-router-dom";
 
 function Login() {
   return (
@@ -27,7 +28,7 @@ function Login() {
 
               <div className="flex justify-between text-sm text-blue-600">
                 <a href="#">Register</a>
-                <a href="#">Forget Password</a>
+                <Link to="/Forget_password">Forgot Password</Link>
               </div>
 
               <button
