@@ -1,6 +1,10 @@
+import Footer from "../components/Footer";
+import Nav from "../components/Nav";
+
 function Login() {
   return (
     <div className="w-full min-h-screen flex flex-col">
+      <Nav />
       <div className="flex-grow flex items-center w-full justify-center bg-slate-300">
         <section className="w-full px-4 sm:px-6 lg:px-8 py-12">
           <div className="max-w-md mx-auto bg-white rounded-lg shadow-lg p-6">
@@ -36,6 +40,7 @@ function Login() {
           </div>
         </section>
       </div>
+      <Footer />
     </div>
   );
 }

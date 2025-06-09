@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
 
 export default function About() {
   return (
     <div className="w-full py-10 ">
+      <Nav />
       <h1 className="text-3xl text-center font-serif font-semibold cursor-pointer text-red-400 ">
         About
       </h1>
@@ -48,6 +51,7 @@ export default function About() {
           <Link to="/">Home</Link>
         </button>
       </div>
+      <Footer />
     </div>
   );
 }

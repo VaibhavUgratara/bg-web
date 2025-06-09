@@ -6,6 +6,8 @@ import {
   FaWhatsapp,
   FaYoutube,
 } from "react-icons/fa";
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -54,6 +56,7 @@ function Contact() {
 
   return (
     <div className="w-full px-4 sm:px-8 py-16 my-10">
+      <Nav />
       <h1 className="text-center text-2xl cursor-pointer py-3 font-mono font-bold">
         <span className="text-white bg-red-500 rounded-lg">Contact</span> Us
       </h1>
@@ -124,6 +127,7 @@ function Contact() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

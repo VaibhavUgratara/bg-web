@@ -1,17 +1,15 @@
-import './App.css'
+import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Home from './pages/Home.jsx';
-import About from './pages/About.jsx';
-import Blogs from './pages/Blogs.jsx';
-import Contact from './pages/Contact.jsx';
-import Login from './pages/Login.jsx';
-import Footer from './components/Footer.jsx';
-import Nav from './components/Nav.jsx';
+import Home from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
+import Blogs from "./pages/Blogs.jsx";
+import Contact from "./pages/Contact.jsx";
+import Login from "./pages/Login.jsx";
+import NotFound from "./pages/NotFound.jsx";
 
 function App() {
   return (
     <div className="min-h-screen flex flex-col">
-      <Nav />
       <div className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -19,12 +17,11 @@ function App() {
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/Login" element={<Login />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
-      
-      <Footer />
     </div>
   );
 }
 
-export default App
+export default App;
